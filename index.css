@@ -31,6 +31,15 @@ a {
 h1,h2,li,.cta{
     font-family: "Barlow Condesed", sans-serif;
 }
+button{
+    background-color: transparent;
+    border:none;
+    outline:none;
+    cursor: pointer;
+}
+p{
+    line-height: 1.8;
+}
 nav {
   position: absolute;
   top: -100vh;
@@ -62,6 +71,7 @@ nav ul li:n-th-child(4) {
 }
 nav ul li:last-child {
   border-top: 1px solid hsl(207, 33%, 95%);
+  padding: 1rem;
 }
 .close {
   display: none;
@@ -76,11 +86,103 @@ nav ul li:last-child {
   width: calc(50vw - 10px);
   z-index: -1;
 }
-
+.showcase{
+    display: flex;
+    flex-direction: column-reverse;
+    padding:4rem 0;
+}
+.showcase article:last-child img{
+    width: calc(125vw);
+}
+.showcase h2{
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin: 6rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    color:hsl(231, 7%, 65%)
+}
+.showcase h2 span{
+    background-color: hsl(230, 29%, 20%);
+    columns: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    letter-spacing: 0;
+}
+.showcase h1{
+    font-size:3rem;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom:1rem;
+}
+.showcase p{
+    margin-bottom: 2rem;
+}
+.showcase .cta button{
+    font-size:1rem;
+    font-weight: bold;
+    font-family: "Barlow Condensed", sans-serif;
+    background-color: hsl(0, 100%, 68%);
+    color: #fff;
+    padding: 0.0625rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.showcase .cta span{
+    font-size:0.8rem;
+    color:hsl(231, 7%, 65%);
+    margin-left: 1rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media(min-width:1024px){
+    nav{
+        position: relative;
+        top:0;
+        background-color: transparent;
+        padding: 0;
+        width: auto;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        transition: 0;
+    }
+    nav.open{
+        top:0;
+    }
+    nav ul{
+        flex-direction: row;
+    }
+    nav ul li:nth-child(4){
+       display: block;
+       color:hsl(231, 7%, 65%); 
+    }
+    #menu-button{
+        display: none;
+    }
+    .showcase{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        margin: auto;
+        place-items:center;
+        padding: 6rem 0;
+    }
+    .showcase h1{
+        font-size: 5rem;
+    }
+    .showcase article:last-child{
+        position: absolute;
+        right:-16rem;
+    }
+    .showcase article:last-child img{
+        width: auto;
+    }
 }
